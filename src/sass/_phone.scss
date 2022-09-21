@@ -1,0 +1,185 @@
+.phone {
+    height: 730px;
+    background-color: $white;
+    border-radius: 50px;
+    padding: $spacer;
+    width: 354px;
+    position: relative;
+    margin: 0 auto;
+    box-shadow: 5px 12px 70px 18px rgba(0,0,0,0.15);
+
+    @media (max-width: 500px) {
+        transform: scale(.8);
+        margin: (-$spacer * 3) 0;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1;
+        margin: 0 auto;
+        width: 175px;
+        height: 35px;
+        border-radius: 20px;
+        background-color: $white;
+    }
+    .walker {
+        position: absolute;
+        top: $spacer;
+        left: $spacer;
+        width: calc(100% - 32px);
+        height: 92px;
+        background: linear-gradient(to right, $lightViolet, $magenta);
+        border-radius: 30px 30px 7px 7px;
+        padding: ($spacer * 2.5) ($spacer * 1.25) $spacer ($spacer * 1.25);
+        box-shadow: 5px 12px 20px -12px rgba(0,0,0,0.25);
+        display: flex;
+        svg {
+            margin-top: $spacer * .5;
+            &.dots {
+                margin-left: auto;
+            }
+        }
+        .avatar {
+            border: 1px solid $white;
+            border-radius: 50%;
+            margin: 0 ($spacer * .75) 0 ($spacer * .5);
+        }
+        .name {
+            color: $appBgColor;
+            font-weight: 500;
+            margin-bottom: ($spacer * .25);
+        }
+        .status {
+            color: $paleViolet;
+            font-size: $font-sm;
+        }
+    }
+    .chat {
+        padding: ($spacer * 7) $spacer ($spacer * 1.25) $spacer;
+        background-color: $appBgColor;
+        height: 100%;
+        border-radius: 30px;
+        font-size: .75rem;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        .chat-bubble {
+            border-radius: 15px;
+            padding: ($spacer * .75) $spacer;
+            margin-bottom: $spacer * .75;
+            max-width: 70%;
+            display: flex;
+            &-owner {
+                background-color: $white;
+                color: $darkViolet;
+                align-self: flex-end;
+                border-bottom-right-radius: 5px;
+                opacity: 0;
+                + .chat-bubble-walker {
+                    margin-top: $spacer * .5;
+                }
+                box-shadow: 0px 10px 8px -4px rgba($black, .05);
+                animation: chat-right 250ms ease-out forwards;
+            }
+            &-walker {
+                background-color: $walkerBubbleBg;
+                color: $moderateViolet;
+                border-bottom-left-radius: 5px;
+                opacity: 0;
+                + .chat-bubble-owner {
+                    margin-top: $spacer * .5;
+                }
+                animation: chat-left 250ms ease-out forwards .5s;
+            }
+            &-pictures {
+                background-color: transparent;
+                padding: 0;
+                img {
+                    border-radius: $spacer * .5;
+                    height: 60px;
+                    width: 60px;
+                    + img {
+                        margin-left: $spacer * .75;
+                    }
+                }
+            }
+            &-price-option {
+                background: linear-gradient(to right, $magenta, $lightViolet);
+                border-bottom-left-radius: 5px;
+                color: hsl(301deg, 91%, 82%);
+                &::before {
+                    content: ""; 
+                    width: 16px;
+                    height: 16px;
+                    border: 1px solid hsl(289, 100%, 75%);
+                    border-radius: 50%;
+                    margin-right: $spacer * .5;
+                }
+                &::after {
+                    content: "";
+                    width: 12px;
+                    height: 12px;
+                    background-color: hsl(289, 100%, 85%);
+                    opacity: 0;
+                    border-radius: 50%;
+                    position: absolute;
+                    top: 15px;
+                    left: 19px;
+                } 
+                .option {
+                    line-height: 1.5;
+                }
+                .price {
+                    color: $white;
+                    font-weight: 700;
+                    margin-left: auto;
+                    font-size: $font-size-base * 1.125;
+                    line-height: 1;
+                }
+            }
+            &:nth-of-type(2) {
+                animation-delay: 1.5s;
+            }
+            &:nth-of-type(3) {
+                animation-delay: 3s;
+            }
+            &:nth-of-type(4) {
+                animation-delay: 3.5s;
+            }
+            &:nth-of-type(5) {
+                animation-delay: 4.75s;
+            }
+            &:nth-of-type(6) {
+                animation-delay: 6s;
+            }
+            &:nth-of-type(7) {
+                animation-delay: 6.75s;
+            }
+            &:nth-of-type(8) {
+                animation-delay: 6.8s;
+                &::after {
+                    animation: fadeInFromNone 0.5s ease-out forwards 7.5s;
+                }
+            }
+        }
+        .message {
+            background-color: $white;
+            border-radius: 25px;
+            padding: $spacer ($spacer * 1.75);
+            color: $grayblue;
+            position: relative;
+            margin-top: auto;
+            .send {
+                position: absolute;
+                top: 0;
+                right: 5px;
+                bottom: 0;
+                margin: auto 0;
+            }
+        }
+    }
+}   

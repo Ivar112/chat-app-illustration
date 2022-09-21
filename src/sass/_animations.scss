@@ -1,0 +1,14 @@
+@keyframes chat-left {
+    from { transform: translate(-5px, 10px); opacity: 0;}
+    to { transform: translate(0); opacity: 1;}
+}
+
+@keyframes chat-right {
+    from { transform: translate(5px, 10px); opacity: 0;}
+    to { transform: translate(0); opacity: 1;}
+}
+
+@keyframes fadeInFromNone {
+    from { opacity: 0;}
+    to {opacity: 1;}
+}

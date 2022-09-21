@@ -1,0 +1,25 @@
+$spacer: 1rem;
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap');
+
+$font-family-base: 'Rubik', sans-serif;
+$font-size-base: 1rem;
+$font-sm: .75rem;
+
+//colors
+
+$paleViolet: hsl(276, 100%, 81%);
+$moderateViolet: hsl(276, 55%, 52%);
+$darkViolet: hsl(271, 15%, 43%);
+$grayblue: hsl(206, 6%, 79%);
+$darkerViolet: hsl(271, 36%, 24%);
+$grayViolet: hsl(270, 7%, 64%);
+
+$magenta: hsl(293, 100%, 63%);
+$lightViolet: hsl(264, 100%, 61%);
+
+$white: hsl(0, 0%, 100%);
+$black: hsl(0, 0%, 0%);
+$appBgColor: hsl(270, 20%, 96%);
+$whiteMagenta: hsl(289, 100%, 72%);
+$walkerBubbleBg: hsl(274, 37%, 93%);
