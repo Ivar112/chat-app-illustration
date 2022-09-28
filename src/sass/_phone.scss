@@ -10,7 +10,7 @@
 
     @media (max-width: 500px) {
         transform: scale(.8);
-        margin: (-$spacer * 3) 0;
+        margin: (-$spacer * 3) auto;
     }
 
     &::before {
@@ -98,12 +98,27 @@
             &-pictures {
                 background-color: transparent;
                 padding: 0;
+                animation: none;
+                opacity: 1;
+                box-shadow: none;
                 img {
                     border-radius: $spacer * .5;
                     height: 60px;
                     width: 60px;
+                    opacity: 0;
+                    box-shadow: 5px 12px 20px -12px rgba(0,0,0,0.25);
                     + img {
                         margin-left: $spacer * .75;
+                    }
+                    animation: chat-right 250ms ease-out forwards;
+                    &:first-of-type {
+                        animation-delay: 3.1s;
+                    }
+                    &:nth-of-type(2) {
+                        animation-delay: 3.05s;
+                    }
+                    &:nth-of-type(3) {
+                        animation-delay: 3s;
                     }
                 }
             }
@@ -143,9 +158,6 @@
             }
             &:nth-of-type(2) {
                 animation-delay: 1.5s;
-            }
-            &:nth-of-type(3) {
-                animation-delay: 3s;
             }
             &:nth-of-type(4) {
                 animation-delay: 3.5s;
